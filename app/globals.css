@@ -1,26 +1,253 @@
+/* app/globals.css */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ===== Theme Vars ===== */
+:root{
+  --brand-cream:#FFF1CA;
+  --brand-gold:#FF7A1A;   /* 🟧 البرتقالي الأساسي */
+  --brand-olive:#8A8A8A;
+  --brand-green:#1F2937;  /* نص داكن */
+
+  /* ✅ جديد: لون موحد للـ navbar/footer (اختاري واحد) */
+  --brand-bar: #FEF3E2; /* أو #F3E9DC */
+
+  /* ✅ إضافات تساعد بالتوحيد */
+  --brand-border: color-mix(in oklab, var(--brand-green) 12%, white);
+  --brand-soft: color-mix(in oklab, white 92%, var(--brand-cream));
+  --brand-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body{
+  /* ✅ أهم تعديل: خلي الخلفية العامة أبيض عشان ما يطلع لون تحت الفوتر */
+  background: #fff;
+  color: var(--brand-green);
+}
+
+/* container */
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+}
+
+/* ===== UI System ===== */
+@layer components {
+
+  /* ===== Buttons ===== */
+  .btn-base{
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1;
+    border-radius: 9999px;
+    transition: 150ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    height: 2.75rem;
+    padding: 0 1.25rem;
+  }
+
+  .btn-book{
+    background: var(--brand-gold);
+    color: white;
+    box-shadow: none !important; /* ✅ بدون شادو */
+  }
+
+  .btn-outline{
+    border: 1px solid color-mix(in oklab, var(--brand-gold) 45%, white);
+    background: white;
+    color: var(--brand-green);
+  }
+  .btn-outline:hover{
+    background: color-mix(in oklab, var(--brand-cream) 60%, white);
+  }
+
+  /* ✅ زر CTA للكروت */
+  .btn-cta{
+    height: 2.5rem;
+    padding: 0 1.25rem;
+    border-radius: 1rem;
+    background: var(--brand-gold);
+    color: #fff;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(255,122,26,0.25);
+    transition: 150ms ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-cta:hover{
+    opacity: 0.92;
+  }
+
+  /* ===== Tags ===== */
+  .tag-chip{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--brand-green);
+    background: var(--brand-cream);
+    border: 1px solid color-mix(in oklab, var(--brand-gold) 40%, white);
+    transition: 150ms ease;
+    white-space: nowrap;
+  }
+  .tag-chip:hover{
+    background: color-mix(in oklab, var(--brand-cream) 70%, white);
+  }
+
+  /* ===== Surface / Card ===== */
+  .surface{
+    border: 1px solid color-mix(in oklab, var(--brand-gold) 18%, white);
+    background: color-mix(in oklab, white 88%, var(--brand-cream));
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .card{
+    border: 1px solid var(--brand-border);
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: 180ms ease;
+  }
+  .card:hover{
+    box-shadow: var(--brand-shadow);
+    transform: translateY(-2px);
+  }
+
+  .card-media{
+    position: relative;
+    background: color-mix(in oklab, white 80%, var(--brand-cream));
+    height: 11.5rem; /* 184px */
+  }
+
+  .card-body{
+    padding: 1.25rem;
+  }
+
+  .badge-top{
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem .75rem;
+    border-radius: 9999px;
+    font-size: .75rem;
+    font-weight: 700;
+    background: color-mix(in oklab, white 80%, var(--brand-cream));
+    border: 1px solid var(--brand-border);
+    color: var(--brand-green);
+    backdrop-filter: blur(10px);
+  }
+
+  /* ===== Inputs ===== */
+  .input{
+    height: 3rem;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in oklab, var(--brand-gold) 25%, white);
+    background: #fff;
+    padding: 0 1rem;
+    outline: none;
+    transition: 150ms ease;
+    color: var(--brand-green);
+  }
+  .input:focus{
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand-gold) 25%, white);
+  }
+  .input-error{
+    border-color: color-mix(in oklab, red 35%, white);
+    box-shadow: 0 0 0 4px color-mix(in oklab, red 18%, white);
+  }
+
+  /* ===== Search UI (Hero/Search Bar) ===== */
+  .search-shell{
+    border-radius: 1.5rem;
+    background: color-mix(in oklab, white 90%, var(--brand-cream));
+    border: 1px solid color-mix(in oklab, var(--brand-gold) 30%, white);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+    padding: 1rem;
+  }
+
+  .search-row{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .75rem;
+    align-items: center;
+  }
+
+  @media (max-width: 768px){
+    .search-row{ grid-template-columns: 1fr; }
+  }
+
+  /* ===== Small chips (places) ===== */
+  .chip{
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: .25rem .65rem;
+    font-size: .72rem;
+    font-weight: 700;
+    background: #fff;
+    border: 1px solid color-mix(in oklab, var(--brand-gold) 22%, white);
+    color: color-mix(in oklab, var(--brand-green) 80%, black);
+  }
+
+  /* ===== Tiny helper buttons ===== */
+  .btn-mini{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    border-radius: 9999px;
+    padding: .5rem 1rem;
+    font-size: .85rem;
+    font-weight: 700;
+    border: 1px solid color-mix(in oklab, var(--brand-gold) 30%, white);
+    background: #fff;
+    color: var(--brand-green);
+    transition: 150ms ease;
+  }
+  .btn-mini:hover{
+    background: color-mix(in oklab, var(--brand-cream) 70%, white);
+  }
+
+  /* ✅ خلفية موحدة لمحتوى الصفحات */
+  .page-bg{
+    background: var(--brand-soft);
+    min-height: calc(100vh - 80px - 280px);
+  }
+
+  .page-bg-white{
+    background: #fff;
+    min-height: calc(100vh - 80px - 280px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ===== Smooth Hero → Content transition ===== */
+.hero-fade{
+  position: relative;
+}
+.hero-fade::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 48px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    color-mix(in oklab, white 92%, var(--brand-cream))
+  );
+  pointer-events: none;
 }

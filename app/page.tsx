@@ -1,65 +1,76 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Hero from "@/components/Hero";
+import Link from "next/link";
+import TripCardSimple from "@/components/TripCardSimple";
+
+const trips = [
+  {
+    id: "sultan-qaboos-mosque",
+    title: "Sultan Qaboos Grand Mosque",
+    rating: 4.9,
+    tag: "Cultural",
+    image: "/oman/01.jpg",
+  },
+  {
+    id: "muttrah-corniche",
+    title: "Muttrah Corniche",
+    rating: 4.7,
+    tag: "Waterfront",
+    image: "/oman/02.jpg",
+  },
+  {
+    id: "muttrah-souq",
+    title: "Muttrah Souq",
+    rating: 4.8,
+    tag: "Souq",
+    image: "/oman/03.jpg",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="w-full">
+      <Hero />
+
+<section className="bg-white">
+        <div className="container py-10 md:py-12">
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="text-xl md:text-2xl font-extrabold text-[var(--brand-green)] mx-auto">
+              Popular Destinations
+            </h2>
+
+            {/* View All */}
+            <Link
+              href="/search"
+              className="hidden md:inline-flex items-center justify-center w-11 h-11 rounded-full
+                         border border-[var(--brand-green)]/15 text-[var(--brand-green)] hover:bg-[var(--brand-cream)] transition shadow-sm"
+              aria-label="View all"
+              title="View all"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <span aria-hidden className="text-lg">→</span>
+            </Link>
+          </div>
+
+          <div className="md:hidden flex justify-center mb-5">
+            <Link
+              href="/search"
+              className="inline-flex items-center gap-2 px-4 h-10 rounded-full border border-[var(--brand-green)]/15
+                         text-[var(--brand-green)] hover:bg-[var(--brand-cream)] transition shadow-sm"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <span>View All</span> <span aria-hidden>→</span>
+            </Link>
+          </div>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {trips.map((t) => (
+              <li key={t.id}>
+                <TripCardSimple title={t.title} tag={t.tag} rating={t.rating} image={t.image} />
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
