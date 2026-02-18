@@ -65,7 +65,7 @@ export default function HomePage() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {trips.map((t) => (
               <li key={t.id}>
-                <TripCardSimple title={t.title} tag={t.tag} rating={t.rating} image={t.image} />
+<TripCardSimple id={t.id} title={t.title} tag={t.tag} rating={t.rating} image={t.image} />
               </li>
             ))}
           </ul>
