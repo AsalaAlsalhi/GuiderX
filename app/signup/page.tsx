@@ -35,6 +35,28 @@
 // }
 
 
+import SignUpForm from "@/components/auth/SignUpForm";
+
 export default function SignUpPage() {
-  return null;
+  return (
+    <main className="page-bg">
+      <div className="container px-4 py-12">
+        <div className="min-h-[calc(100vh-80px)] flex items-center justify-center">
+          <div className="w-full max-w-md">
+            <div className="surface p-6 sm:p-8 text-center">
+              <h1 className="text-2xl font-extrabold text-[var(--brand-green)] mb-2">
+                Join GuiderX
+              </h1>
+
+              <p className="text-[var(--brand-olive)] mb-6">
+                We are launching soon 
+              </p>
+
+              <SignUpForm />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
 }

@@ -129,7 +129,7 @@ export function LiveMap({ guides, selectedId, onSelect }: Props) {
     >
       <div ref={containerRef} className="h-full w-full" />
 
-      {/* ✅ Legend */}
+      {/* Legend */}
       <div className="pointer-events-none absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[11px] text-[var(--brand-olive)] shadow-sm flex items-center gap-3">
         <span className="flex items-center gap-1">
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
@@ -141,7 +141,7 @@ export function LiveMap({ guides, selectedId, onSelect }: Props) {
         </span>
       </div>
 
-      {/* ✅ Small brand badge */}
+      {/* Small brand badge */}
       <div className="pointer-events-none absolute right-4 bottom-4 rounded-full bg-white/90 px-3 py-1 text-[11px] shadow-sm"
            style={{ color: "var(--brand-green)", border: "1px solid rgba(255,184,35,0.35)" }}>
         GuiderX Map
