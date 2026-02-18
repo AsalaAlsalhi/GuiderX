@@ -15,12 +15,10 @@ function Icon({ children }: { children: React.ReactNode }) {
 
 export default function Footer() {
   return (
-<footer
-  className="border-t"
-  style={{ backgroundColor: "#ffffff", borderColor: "rgba(0,0,0,0.06)" }}
->
-
-
+    <footer
+      className="border-t"
+      style={{ backgroundColor: "#ffffff", borderColor: "rgba(0,0,0,0.06)" }}
+    >
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Quick Links */}
@@ -44,7 +42,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-black/60">
               <li>Help Center</li>
               <li>Terms of Service</li>
-              
             </ul>
           </div>
 
@@ -55,14 +52,23 @@ export default function Footer() {
             </h3>
 
             <div className="space-y-2 text-sm text-black/60">
-              <p className="flex items-center gap-2">
+              {/* EMAIL – يفتح مباشرة */}
+              <a
+                href="mailto:info@guiderx.co"
+                className="flex items-center gap-2 hover:underline"
+              >
                 <Mail className="w-4 h-4 text-[var(--brand-gold)]" />
-                Info@guiderx.om
-              </p>
-              <p className="flex items-center gap-2">
+                Info@guiderx.co
+              </a>
+
+              {/* PHONE */}
+              <a
+                href="tel:+96891176103"
+                className="flex items-center gap-2 hover:underline"
+              >
                 <Phone className="w-4 h-4 text-[var(--brand-gold)]" />
                 +968 9117 6103
-              </p>
+              </a>
             </div>
 
             <div className="mt-4 flex gap-2">
