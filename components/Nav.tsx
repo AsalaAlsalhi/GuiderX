@@ -17,10 +17,13 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 border-b"
-      style={{ backgroundColor: "#FEF3E2", borderColor: "rgba(0,0,0,0.06)" }}
-    >
+ <header
+  className="fixed top-0 left-0 right-0 z-50 bg-white"
+  style={{
+    boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
+  }}
+>
+
       <div className="container h-20 md:h-24 flex items-center justify-between">
         {/* Logo */}
         <Link

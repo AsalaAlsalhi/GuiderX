@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Search as SearchIcon, X, Tag } from "lucide-react";
 import TripCardSimple from "@/components/TripCardSimple";
 
-/** Temporary mock data (بدليه بالداتا الحقيقية لاحقاً) */
+
 const ALL_TRIPS = [
   {
     id: "sultan-qaboos-grand-mosque",
@@ -58,14 +58,12 @@ export default function SearchPage() {
   const router = useRouter();
   const params = useSearchParams();
 
-  // ✅ خليها متوافقة مع Hero عندك: /search?query=...
   const qFromUrl = params.get("query") ?? "";
   const tagFromUrl = (params.get("tag") as TagType) ?? "All";
 
   const [q, setQ] = useState(qFromUrl);
   const [tag, setTag] = useState<TagType>(tagFromUrl);
 
-  // keep query + tag in URL (بدون ريفرش)
   useEffect(() => {
     const sp = new URLSearchParams();
 

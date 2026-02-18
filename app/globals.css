@@ -1,17 +1,17 @@
 /* app/globals.css */
 @import "tailwindcss";
 
-/* ===== Theme Vars ===== */
+
 :root{
   --brand-cream:#FFF1CA;
-  --brand-gold:#FF7A1A;   /* 🟧 البرتقالي الأساسي */
+  --brand-gold:#FF7A1A;   
   --brand-olive:#8A8A8A;
-  --brand-green:#1F2937;  /* نص داكن */
+  --brand-green:#1F2937;  
 
-  /* ✅ جديد: لون موحد للـ navbar/footer (اختاري واحد) */
-  --brand-bar: #FEF3E2; /* أو #F3E9DC */
+  
+  --brand-bar: #FEF3E2; 
 
-  /* ✅ إضافات تساعد بالتوحيد */
+  
   --brand-border: color-mix(in oklab, var(--brand-green) 12%, white);
   --brand-soft: color-mix(in oklab, white 92%, var(--brand-cream));
   --brand-shadow: 0 12px 30px rgba(0,0,0,0.08);
@@ -22,12 +22,12 @@ html, body {
 }
 
 body{
-  /* ✅ أهم تعديل: خلي الخلفية العامة أبيض عشان ما يطلع لون تحت الفوتر */
+  
   background: #fff;
   color: var(--brand-green);
 }
 
-/* container */
+
 .container{
   margin-left: auto;
   margin-right: auto;
@@ -36,10 +36,10 @@ body{
   max-width: 1200px;
 }
 
-/* ===== UI System ===== */
+
 @layer components {
 
-  /* ===== Buttons ===== */
+  
   .btn-base{
     font-weight: 600;
     font-size: 0.95rem;
@@ -57,7 +57,7 @@ body{
   .btn-book{
     background: var(--brand-gold);
     color: white;
-    box-shadow: none !important; /* ✅ بدون شادو */
+    box-shadow: none !important; 
   }
 
   .btn-outline{
@@ -69,7 +69,7 @@ body{
     background: color-mix(in oklab, var(--brand-cream) 60%, white);
   }
 
-  /* ✅ زر CTA للكروت */
+  
   .btn-cta{
     height: 2.5rem;
     padding: 0 1.25rem;
@@ -87,7 +87,7 @@ body{
     opacity: 0.92;
   }
 
-  /* ===== Tags ===== */
+  
   .tag-chip{
     display: inline-flex;
     align-items: center;
@@ -106,7 +106,7 @@ body{
     background: color-mix(in oklab, var(--brand-cream) 70%, white);
   }
 
-  /* ===== Surface / Card ===== */
+  
   .surface{
     border: 1px solid color-mix(in oklab, var(--brand-gold) 18%, white);
     background: color-mix(in oklab, white 88%, var(--brand-cream));
@@ -130,7 +130,7 @@ body{
   .card-media{
     position: relative;
     background: color-mix(in oklab, white 80%, var(--brand-cream));
-    height: 11.5rem; /* 184px */
+    height: 11.5rem; 
   }
 
   .card-body{
@@ -150,7 +150,7 @@ body{
     backdrop-filter: blur(10px);
   }
 
-  /* ===== Inputs ===== */
+  
   .input{
     height: 3rem;
     width: 100%;
@@ -170,7 +170,7 @@ body{
     box-shadow: 0 0 0 4px color-mix(in oklab, red 18%, white);
   }
 
-  /* ===== Search UI (Hero/Search Bar) ===== */
+  
   .search-shell{
     border-radius: 1.5rem;
     background: color-mix(in oklab, white 90%, var(--brand-cream));
@@ -190,7 +190,7 @@ body{
     .search-row{ grid-template-columns: 1fr; }
   }
 
-  /* ===== Small chips (places) ===== */
+  
   .chip{
     display: inline-flex;
     align-items: center;
@@ -203,7 +203,7 @@ body{
     color: color-mix(in oklab, var(--brand-green) 80%, black);
   }
 
-  /* ===== Tiny helper buttons ===== */
+  
   .btn-mini{
     display: inline-flex;
     align-items: center;
@@ -221,7 +221,7 @@ body{
     background: color-mix(in oklab, var(--brand-cream) 70%, white);
   }
 
-  /* ✅ خلفية موحدة لمحتوى الصفحات */
+  
   .page-bg{
     background: var(--brand-soft);
     min-height: calc(100vh - 80px - 280px);
@@ -232,8 +232,6 @@ body{
     min-height: calc(100vh - 80px - 280px);
   }
 }
-
-/* ===== Smooth Hero → Content transition ===== */
 .hero-fade{
   position: relative;
 }
@@ -243,11 +241,34 @@ body{
   left: 0;
   right: 0;
   bottom: -1px;
-  height: 48px;
+  height: 60px;
   background: linear-gradient(
     to bottom,
     rgba(255,255,255,0),
-    color-mix(in oklab, white 92%, var(--brand-cream))
+    #ffffff
   );
   pointer-events: none;
+}
+
+
+.hero-gradient-sides{
+  background:
+    
+    radial-gradient(
+      520px 320px at 0% 15%,
+      rgba(255,122,26,0.30) 0%,
+      rgba(255,122,26,0) 65%
+    ),
+    
+    radial-gradient(
+      520px 320px at 100% 15%,
+      rgba(255,122,26,0.26) 0%,
+      rgba(255,122,26,0) 65%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--brand-bar) 0%,
+      color-mix(in oklab, var(--brand-cream) 55%, white) 38%,
+      #ffffff 78%
+    );
 }

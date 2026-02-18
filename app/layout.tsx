@@ -20,7 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <Nav />
 
-        {/* ✅ خلي main أبيض عشان ما يطلع الشريط بلون body */}
         <main className="flex-1 flex flex-col pt-20 md:pt-24 bg-white">
           {children}
         </main>

@@ -15,10 +15,11 @@ function Icon({ children }: { children: React.ReactNode }) {
 
 export default function Footer() {
   return (
-   <footer
+<footer
   className="border-t"
-  style={{ backgroundColor: "#FEF3E2", borderColor: "rgba(0,0,0,0.06)" }}
+  style={{ backgroundColor: "#ffffff", borderColor: "rgba(0,0,0,0.06)" }}
 >
+
 
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -43,8 +44,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-black/60">
               <li>Help Center</li>
               <li>Terms of Service</li>
-              <li>Privacy Policy</li>
-              <li>FAQ</li>
+              
             </ul>
           </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-black/60">
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[var(--brand-gold)]" />
-                GuiderX@gmail.com
+                GuiderX@info.com
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[var(--brand-gold)]" />

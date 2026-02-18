@@ -21,7 +21,7 @@ export default function MapPage() {
     <main className="page-bg">
       <div className="container px-4 py-10">
         <div className="mx-auto max-w-6xl space-y-6">
-          {/* ✅ Top Card */}
+          {/*  Top Card */}
           <section
             className="rounded-3xl border bg-white shadow-sm p-6 sm:p-8"
             style={{ borderColor: "rgba(45,79,43,0.12)" }}
@@ -46,7 +46,7 @@ export default function MapPage() {
             </div>
           </section>
 
-          {/* ✅ Selected Guide Card */}
+          {/* Selected Guide Card */}
           {selectedGuide && (
             <section
               className="mx-auto max-w-4xl rounded-3xl border bg-white shadow-sm p-5 sm:p-6"
