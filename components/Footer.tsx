@@ -57,7 +57,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-black/60">
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[var(--brand-gold)]" />
-                GuiderX@info.com
+                Info@guiderx.om
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[var(--brand-gold)]" />
