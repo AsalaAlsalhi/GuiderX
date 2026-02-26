@@ -4,9 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { IoLocationOutline } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
-import { HiOutlineMapPin } from "react-icons/hi2";
-import { HiUsers } from "react-icons/hi2";
-
+import { HiOutlineMapPin, HiUsers } from "react-icons/hi2";
 
 export default function Hero() {
   const router = useRouter();
@@ -21,37 +19,53 @@ export default function Hero() {
   return (
     <section className="hero-fade hero-gradient-sides relative overflow-hidden">
       <div className="container relative">
-        <div className="pt-14 sm:pt-16 md:pt-24 pb-10 sm:pb-12 md:pb-16">
+        <div className="pt-10 sm:pt-14 md:pt-24 pb-8 sm:pb-10 md:pb-16">
           <div className="max-w-5xl mx-auto text-center">
-            {/* Title */}
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
               <span className="text-[var(--brand-green)]">Find your </span>
               <span className="text-[var(--brand-gold)]">guide!</span>
             </h1>
 
-            
+            <p className="mt-3 text-sm sm:text-base md:text-lg text-[var(--brand-olive)] max-w-2xl mx-auto">
+              Explore. Choose a guide. Book instantly.
+            </p>
 
             {/* Search */}
-            <div className="mt-7 sm:mt-8 max-w-3xl mx-auto">
+<div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
               <div className="search-shell">
                 <div className="flex flex-col md:flex-row items-stretch gap-2">
-                  {/* Input */}
-                  <div className="flex-1 flex items-center gap-2 rounded-xl bg-white px-3 h-11 ring-1 ring-black/10 focus-within:ring-2 focus-within:ring-[var(--brand-gold)]">
+                  {/* ✅ Input رجعناه + شلّينا الحد الأسود */}
+                  <div
+                    className="
+                      flex-1 flex items-center gap-2 rounded-xl bg-white px-3 h-11
+                      border border-[var(--brand-gold)]/25
+                      shadow-sm
+                      focus-within:border-[var(--brand-gold)]/45
+                      focus-within:ring-4 focus-within:ring-[var(--brand-gold)]/15
+                    "
+                  >
                     <IoLocationOutline className="text-[var(--brand-olive)] text-lg shrink-0" />
                     <input
                       value={q}
                       onChange={(e) => setQ(e.target.value)}
                       onKeyDown={(e) => e.key === "Enter" && goSearch()}
                       type="text"
+                      placeholder="Search for area, place, landmark..."
                       className="w-full outline-none text-sm bg-transparent text-[var(--brand-green)] placeholder:text-[var(--brand-olive)]/70"
                     />
                   </div>
 
                   {/* Buttons */}
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 w-full md:w-auto">
                     <button
                       onClick={goSearch}
-                      className="h-11 px-5 rounded-xl bg-[var(--brand-gold)] text-white font-semibold flex items-center gap-2"
+                      className="
+                        h-11 px-5 rounded-xl
+                        bg-[var(--brand-gold)] text-white font-semibold
+                        flex items-center justify-center gap-2
+                        transition hover:brightness-105
+                        flex-1 md:flex-none
+                      "
                     >
                       <FiSearch />
                       Let’s go
@@ -59,10 +73,16 @@ export default function Hero() {
 
                     <button
                       onClick={() => router.push("/map")}
-                      className="h-11 px-5 rounded-xl bg-[var(--brand-green)] text-white font-semibold flex items-center gap-2"
+                      className="
+                        h-11 px-5 rounded-xl
+                        bg-[var(--brand-green)] text-white font-semibold
+                        flex items-center justify-center gap-2
+                        transition hover:brightness-105
+                        flex-1 md:flex-none
+                      "
                     >
-                      <HiOutlineMapPin />
-                      Find a guid nearby
+                      <HiOutlineMapPin className="text-lg" />
+                      Find a guide nearby
                     </button>
                   </div>
                 </div>
@@ -70,36 +90,32 @@ export default function Hero() {
             </div>
             {/* /Search */}
 
-{/* Waitlist CTA */}
-<div className="mt-6 flex justify-center">
-  <button
-    onClick={() =>
-      window.location.href =
-        "https://guiderx-waitlist.onrender.com/"
-    }
-    className="
-      h-11 px-7
-      rounded-xl
-      font-semibold
-      text-white
-      bg-gradient-to-r
-      from-[var(--brand-gold)]
-      to-orange-400
-      shadow-md
-      hover:shadow-lg
-      hover:brightness-105
-      transition
-      flex items-center gap-2
-    "
-  >
-    <HiUsers className="text-lg opacity-90" />
-    Join the waitlist
-  </button>
-</div>
+            {/* Waitlist */}
+<div className="mt-5 sm:mt-6 max-w-2xl mx-auto">
+              <button
+                onClick={() =>
+                  (window.location.href = "https://guiderx-waitlist.onrender.com/")
+                }
+                className="
+                  w-full h-11
+                  rounded-xl
+                  font-semibold text-white
+                  bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
+                  shadow-[0_10px_28px_rgba(255,122,26,0.25)]
+                  hover:shadow-[0_14px_34px_rgba(255,122,26,0.32)]
+                  hover:brightness-105
+                  transition
+                  flex items-center justify-center gap-2
+                "
+              >
+                <HiUsers className="text-lg opacity-90" />
+                Join the waitlist
+              </button>
 
-
-
-
+              <p className="mt-2 text-xs text-[var(--brand-olive)]">
+                Get early access updates and launch news.
+              </p>
+            </div>
           </div>
         </div>
       </div>
