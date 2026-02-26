@@ -112,9 +112,7 @@ export default function Hero() {
                 Join the waitlist
               </button>
 
-              <p className="mt-2 text-xs text-[var(--brand-olive)]">
-                Get early access updates and launch news.
-              </p>
+              
             </div>
           </div>
         </div>
