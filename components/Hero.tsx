@@ -47,7 +47,6 @@ export default function Hero() {
                       onChange={(e) => setQ(e.target.value)}
                       onKeyDown={(e) => e.key === "Enter" && goSearch()}
                       type="text"
-                      placeholder="Search for area, place, landmark..."
                       className="w-full outline-none text-sm bg-transparent text-[var(--brand-green)] placeholder:text-[var(--brand-olive)]/70"
                     />
                   </div>
