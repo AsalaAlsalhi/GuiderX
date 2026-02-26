@@ -29,7 +29,8 @@ export default function Hero() {
 
             {/* Search */}
             <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
-              <div className="search-shell border-0">
+              {/* خففنا padding + shadow بالموبايل */}
+              <div className="search-shell border-0 p-3 sm:p-4 shadow-[0_14px_34px_rgba(0,0,0,0.08)] sm:shadow-[0_18px_45px_rgba(0,0,0,0.10)]">
                 <div className="flex flex-col md:flex-row items-stretch gap-2">
                   {/* Input (NO BORDER) */}
                   <div
@@ -61,6 +62,7 @@ export default function Hero() {
                         flex items-center justify-center gap-2
                         transition hover:brightness-105
                         flex-1 md:flex-none
+                        text-sm sm:text-base
                       "
                     >
                       <FiSearch />
@@ -75,6 +77,8 @@ export default function Hero() {
                         flex items-center justify-center gap-2
                         transition hover:brightness-105
                         flex-1 md:flex-none
+                        text-sm sm:text-base
+                        whitespace-nowrap
                       "
                     >
                       <HiOutlineMapPin className="text-lg" />
@@ -98,11 +102,12 @@ export default function Hero() {
                   rounded-xl
                   font-semibold text-white
                   bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
-                  shadow-[0_10px_28px_rgba(255,122,26,0.25)]
-                  hover:shadow-[0_14px_34px_rgba(255,122,26,0.32)]
+                  shadow-[0_8px_20px_rgba(255,122,26,0.22)]
+                  hover:shadow-[0_10px_26px_rgba(255,122,26,0.28)]
                   hover:brightness-105
                   transition
                   flex items-center justify-center gap-2
+                  text-sm sm:text-base
                 "
               >
                 <HiUsers className="text-lg opacity-90" />
