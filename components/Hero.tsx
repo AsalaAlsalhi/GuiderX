@@ -21,27 +21,24 @@ export default function Hero() {
       <div className="container relative">
         <div className="pt-10 sm:pt-14 md:pt-24 pb-8 sm:pb-10 md:pb-16">
           <div className="max-w-5xl mx-auto text-center">
+            {/* Title */}
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
               <span className="text-[var(--brand-green)]">Find your </span>
               <span className="text-[var(--brand-gold)]">guide!</span>
             </h1>
 
-            <p className="mt-3 text-sm sm:text-base md:text-lg text-[var(--brand-olive)] max-w-2xl mx-auto">
-              Explore. Choose a guide. Book instantly.
-            </p>
-
             {/* Search */}
-<div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
-              <div className="search-shell">
+            <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
+              <div className="search-shell border-0">
                 <div className="flex flex-col md:flex-row items-stretch gap-2">
-                  {/* ✅ Input رجعناه + شلّينا الحد الأسود */}
+                  {/* Input (NO BORDER) */}
                   <div
                     className="
-                      flex-1 flex items-center gap-2 rounded-xl bg-white px-3 h-11
-                      border border-[var(--brand-gold)]/25
+                      flex-1 flex items-center gap-2
+                      rounded-xl bg-white px-3 h-11
                       shadow-sm
-                      focus-within:border-[var(--brand-gold)]/45
-                      focus-within:ring-4 focus-within:ring-[var(--brand-gold)]/15
+                      focus-within:ring-4
+                      focus-within:ring-[var(--brand-gold)]/15
                     "
                   >
                     <IoLocationOutline className="text-[var(--brand-olive)] text-lg shrink-0" />
@@ -91,10 +88,11 @@ export default function Hero() {
             {/* /Search */}
 
             {/* Waitlist */}
-<div className="mt-5 sm:mt-6 max-w-2xl mx-auto">
+            <div className="mt-5 sm:mt-6 max-w-2xl mx-auto">
               <button
                 onClick={() =>
-                  (window.location.href = "https://guiderx-waitlist.onrender.com/")
+                  (window.location.href =
+                    "https://guiderx-waitlist.onrender.com/")
                 }
                 className="
                   w-full h-11
@@ -111,9 +109,8 @@ export default function Hero() {
                 <HiUsers className="text-lg opacity-90" />
                 Join the waitlist
               </button>
-
-              
             </div>
+            {/* /Waitlist */}
           </div>
         </div>
       </div>
