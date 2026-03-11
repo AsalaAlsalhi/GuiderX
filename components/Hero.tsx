@@ -21,22 +21,20 @@ export default function Hero() {
       <div className="container relative">
         <div className="pt-10 sm:pt-14 md:pt-20 pb-10 sm:pb-12 md:pb-16">
           <div className="max-w-4xl mx-auto text-center">
+
             {/* Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
               <span className="text-[var(--brand-green)]">Find your </span>
               <span className="text-[var(--brand-gold)]">guide!</span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-[var(--brand-green)]/65 max-w-2xl mx-auto leading-7">
-              Discover trusted local guides and explore destinations around Oman
-              with ease.
-            </p>
+            
 
             {/* Search */}
             <div className="mt-6 sm:mt-8 max-w-3xl mx-auto">
               <div className="search-shell border border-black/5 bg-white/80 backdrop-blur-sm rounded-[24px] p-3 sm:p-4 shadow-[0_14px_34px_rgba(0,0,0,0.08)] sm:shadow-[0_18px_45px_rgba(0,0,0,0.10)]">
                 <div className="flex flex-col lg:flex-row items-stretch gap-3">
+
                   {/* Input */}
                   <div
                     className="
@@ -49,6 +47,7 @@ export default function Hero() {
                     "
                   >
                     <IoLocationOutline className="text-[var(--brand-olive)] text-lg shrink-0" />
+
                     <input
                       value={q}
                       onChange={(e) => setQ(e.target.value)}
@@ -60,7 +59,9 @@ export default function Hero() {
                   </div>
 
                   {/* Buttons */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex gap-2 w-full lg:w-auto">
+                  <div className="flex gap-2 w-full lg:w-auto">
+
+                    {/* Search button */}
                     <button
                       onClick={goSearch}
                       className="
@@ -77,39 +78,42 @@ export default function Hero() {
                       Let’s go
                     </button>
 
+                    {/* Map button */}
                     <button
-  onClick={() => router.push("/map")}
-  className="
-    h-11 px-5 rounded-xl
-    border border-[var(--brand-gold)]/40
-    text-[var(--brand-gold)]
-    bg-white
-    font-semibold
-    flex items-center justify-center gap-2
-    transition
-    hover:bg-orange-50
-    hover:border-[var(--brand-gold)]
-    flex-1 md:flex-none
-    text-sm sm:text-base
-    whitespace-nowrap
-  "
->
-  <HiOutlineMapPin className="text-lg text-[var(--brand-gold)]" />
-  Find a guide nearby
-</button>
+                      onClick={() => router.push("/map")}
+                      className="
+                        h-12 px-5 rounded-2xl
+                        border border-[var(--brand-gold)]/40
+                        text-[var(--brand-gold)]
+                        bg-white
+                        font-semibold
+                        flex items-center justify-center gap-2
+                        transition
+                        hover:bg-orange-50
+                        hover:border-[var(--brand-gold)]
+                        text-sm sm:text-base
+                        whitespace-nowrap
+                      "
+                    >
+                      <HiOutlineMapPin className="text-lg text-[var(--brand-gold)]" />
+                      Find a guide nearby
+                    </button>
+
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* CTA buttons */}
-            <div className="mt-4 sm:mt-5 max-w-3xl mx-auto grid grid-cols-1 gap-3">
+            {/* CTA Buttons */}
+            <div className="mt-5 max-w-3xl mx-auto flex flex-col sm:flex-row gap-3">
+
+              {/* BorderX */}
               <button
                 onClick={() => {
                   window.location.href = "https://guiderx.co/";
                 }}
                 className="
-                  w-full h-12
+                  w-full sm:w-1/2 h-12
                   rounded-2xl
                   font-semibold text-white
                   bg-[#2563EB]
@@ -123,18 +127,18 @@ export default function Hero() {
                 Explore BorderX
               </button>
 
+              {/* Waitlist */}
               <button
                 onClick={() => {
                   window.location.href =
                     "https://guiderx-waitlist.onrender.com/";
                 }}
                 className="
-                  w-full h-12
+                  w-full sm:w-1/2 h-12
                   rounded-2xl
                   font-semibold text-white
                   bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
                   shadow-[0_8px_20px_rgba(255,122,26,0.22)]
-                  hover:shadow-[0_10px_26px_rgba(255,122,26,0.28)]
                   hover:brightness-105
                   transition
                   flex items-center justify-center gap-2
@@ -144,7 +148,9 @@ export default function Hero() {
                 <HiUsers className="text-lg opacity-90" />
                 Join the waitlist
               </button>
+
             </div>
+
           </div>
         </div>
       </div>
