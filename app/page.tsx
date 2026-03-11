@@ -72,7 +72,7 @@ export default function HomePage() {
 
               </div>
 
-              {/* BorderX Button (داخل الكارد وبعرض كامل) */}
+              {/* BorderX Button */}
               <div className="mt-6 px-6">
                 <button
                   onClick={() => {
@@ -88,6 +88,7 @@ export default function HomePage() {
                     hover:bg-[#1D4ED8]
                     shadow-[0_8px_20px_rgba(37,99,235,0.18)]
                     transition
+                    cursor-pointer
                     text-sm sm:text-base
                   "
                 >
@@ -104,17 +105,18 @@ export default function HomePage() {
                   window.location.href =
                     "https://guiderx-waitlist.onrender.com/";
                 }}
-                className="
-                  w-full h-12
-                  rounded-2xl
-                  font-semibold text-white
-                  bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
-                  shadow-[0_8px_20px_rgba(255,122,26,0.22)]
-                  hover:brightness-105
-                  transition
-                  flex items-center justify-center gap-2
-                  text-sm sm:text-base
-                "
+               className="
+w-full h-12
+rounded-2xl
+font-semibold text-white
+bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
+shadow-[0_8px_20px_rgba(255,122,26,0.22)]
+hover:brightness-105
+transition
+cursor-pointer
+flex items-center justify-center gap-2
+text-sm sm:text-base
+"
               >
                 <HiUsers className="text-lg opacity-90" />
                 Join the waitlist

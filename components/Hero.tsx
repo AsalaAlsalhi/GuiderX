@@ -37,6 +37,7 @@ export default function Hero() {
                       rounded-2xl bg-white px-4 h-12
                       border border-black/10
                       shadow-sm
+                      
                       focus-within:ring-4
                       focus-within:ring-[var(--brand-gold)]/15
                     "
@@ -65,6 +66,7 @@ export default function Hero() {
                         shadow-[0_8px_18px_rgba(255,122,26,0.18)]
                         text-sm sm:text-base
                         whitespace-nowrap
+                        cursor-pointer
                         w-full sm:w-auto
                       "
                     >
@@ -87,6 +89,7 @@ export default function Hero() {
                         hover:border-[var(--brand-gold)]
                         text-sm sm:text-base
                         whitespace-nowrap
+                        cursor-pointer
                         w-full sm:w-auto
                       "
                     >
