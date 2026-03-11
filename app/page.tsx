@@ -81,7 +81,8 @@ export default function HomePage() {
                   className="
                     w-full h-12
                     rounded-2xl
-                    font-bold
+                                      font-semibold text-white
+
                     text-white
                     bg-[#2563EB]
                     hover:bg-[#1D4ED8]
