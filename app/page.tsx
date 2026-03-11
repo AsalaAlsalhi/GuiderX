@@ -144,6 +144,7 @@ text-sm sm:text-base
                   inline-flex items-center gap-2
                   px-4 h-10 rounded-full
                   bg-white
+                  cursor-pointer
                   border border-[var(--brand-green)]/15
                   text-[var(--brand-green)] font-semibold
                   shadow-sm
