@@ -97,7 +97,7 @@ export default function HomePage() {
             </div>
 
             {/* Waitlist Button */}
-            <div className="mt-4">
+            <div className="mt-4 px-6">
               <button
                 onClick={() => {
                   window.location.href =
