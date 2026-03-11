@@ -1,15 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
-import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
-import { FaApple, FaAndroid } from "react-icons/fa";
+import { Mail, Phone, Instagram, Linkedin } from "lucide-react";
+import { FaApple, FaAndroid, FaWhatsapp } from "react-icons/fa";
 
-function Icon({ children }: { children: React.ReactNode }) {
+function Icon({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) {
   return (
-    <span className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-black/5 transition">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center hover:bg-black/5 transition"
+    >
       {children}
-    </span>
+    </a>
   );
 }
 
@@ -21,7 +31,6 @@ export default function Footer() {
     >
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Quick Links */}
           <div>
             <h3 className="font-extrabold mb-3 text-[var(--brand-green)]">
               Quick Links
@@ -34,7 +43,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
           <div>
             <h3 className="font-extrabold mb-3 text-[var(--brand-green)]">
               Support
@@ -45,14 +53,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="font-extrabold mb-3 text-[var(--brand-green)]">
               Contact
             </h3>
 
             <div className="space-y-2 text-sm text-black/60">
-              {/* EMAIL – يفتح مباشرة */}
               <a
                 href="mailto:info@guiderx.co"
                 className="flex items-center gap-2 hover:underline"
@@ -61,7 +67,6 @@ export default function Footer() {
                 Info@guiderx.co
               </a>
 
-              {/* PHONE */}
               <a
                 href="tel:+96891176103"
                 className="flex items-center gap-2 hover:underline"
@@ -84,10 +89,17 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-2">
-            <Icon><Facebook className="w-4 h-4" /></Icon>
-            <Icon><Instagram className="w-4 h-4" /></Icon>
-            <Icon><Youtube className="w-4 h-4" /></Icon>
-            <Icon><Linkedin className="w-4 h-4" /></Icon>
+            <Icon href="https://www.instagram.com/guiderx.co?igsh=MWNzYmVrZDhnbzZ6bA==">
+              <Instagram className="w-4 h-4" />
+            </Icon>
+
+            <Icon href="https://linkedin.com/in/guider-x-7831a1348">
+              <Linkedin className="w-4 h-4" />
+            </Icon>
+
+            <Icon href="https://wa.me/96891176103">
+              <FaWhatsapp className="w-4 h-4" />
+            </Icon>
           </div>
         </div>
       </div>

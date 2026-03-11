@@ -5,7 +5,8 @@ import Link from "next/link";
 import TripCardSimple from "@/components/TripCardSimple";
 import { ArrowRight } from "lucide-react";
 import { HiUsers } from "react-icons/hi2";
-import { Truck } from "lucide-react";const trips = [
+
+const trips = [
   {
     id: "sultan-qaboos-mosque",
     title: "Sultan Qaboos Grand Mosque",
@@ -34,37 +35,59 @@ export default function HomePage() {
     <main className="w-full">
       <Hero />
 
-      {/* CTA Section */}
+      {/* BorderX Card */}
       <section className="bg-white">
-        <div className="container pt-2 pb-8 md:pb-10">
-          <div className="max-w-3xl mx-auto flex flex-col sm:flex-row gap-3">
-           <button
-  onClick={() => {
-    window.location.href = "https://guiderx.co/";
-  }}
-  className="
-    w-full sm:flex-1 h-12
-    rounded-2xl
-    font-semibold text-white
-    bg-[#2563EB]
-    hover:bg-[#1D4ED8]
-    shadow-[0_10px_24px_rgba(37,99,235,0.20)]
-    transition
-    flex items-center justify-center gap-2
-    text-sm sm:text-base
-  "
->
-  <Truck className="w-5 h-5" />
-  Explore BorderX
-</button>
+        <div className="container pt-6 pb-4">
+          <div className="max-w-xl mx-auto">
 
-            <button
-              onClick={() => {
-                window.location.href =
-                  "https://guiderx-waitlist.onrender.com/";
-              }}
-              className="
-                w-full sm:flex-1 h-12
+            <div className="rounded-2xl border border-black/5 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)] text-center">
+
+              {/* Available Badge */}
+              <div className="flex justify-center mb-3">
+                <span className="inline-flex items-center rounded-full bg-green-600 px-3 py-1 text-xs font-semibold text-white">
+                  Available Now
+                </span>
+              </div>
+
+              {/* Text */}
+              <p className="text-base sm:text-lg font-bold text-[var(--brand-green)] leading-relaxed">
+                Book your luxury & reliable stress-free border crossing
+                <br />
+                Door-to-door service with BorderX
+              </p>
+
+              {/* BorderX Button */}
+              <div className="mt-6 flex justify-center">
+                <button
+                  onClick={() => {
+                    window.location.href = "https://guiderx.co/";
+                  }}
+                  className="
+                  h-11 px-8
+                  rounded-xl
+                  font-semibold text-white
+                  bg-[#2563EB]
+                  hover:bg-[#1D4ED8]
+                  shadow-[0_8px_20px_rgba(37,99,235,0.18)]
+                  transition
+                  text-sm
+                "
+                >
+                  BorderX
+                </button>
+              </div>
+
+            </div>
+
+            {/* Waitlist Button */}
+            <div className="mt-5">
+              <button
+                onClick={() => {
+                  window.location.href =
+                    "https://guiderx-waitlist.onrender.com/";
+                }}
+                className="
+                w-full h-12
                 rounded-2xl
                 font-semibold text-white
                 bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
@@ -74,18 +97,22 @@ export default function HomePage() {
                 flex items-center justify-center gap-2
                 text-sm sm:text-base
               "
-            >
-              <HiUsers className="text-lg opacity-90" />
-              Join the waitlist
-            </button>
+              >
+                <HiUsers className="text-lg opacity-90" />
+                Join the waitlist
+              </button>
+            </div>
+
           </div>
         </div>
       </section>
 
+      {/* Popular Destinations */}
       <section className="bg-white">
         <div className="container py-10 md:py-12">
-          {/* Header */}
+
           <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+
             <h2 className="text-xl md:text-2xl font-extrabold text-[var(--brand-green)] text-center sm:text-left">
               Popular Destinations
             </h2>
@@ -94,22 +121,22 @@ export default function HomePage() {
               <Link
                 href="/search"
                 className="
-                  inline-flex items-center gap-2
-                  px-4 h-10 rounded-full
-                  bg-white
-                  border border-[var(--brand-green)]/15
-                  text-[var(--brand-green)] font-semibold
-                  shadow-sm
-                  hover:bg-[var(--brand-cream)] transition
-                "
+                inline-flex items-center gap-2
+                px-4 h-10 rounded-full
+                bg-white
+                border border-[var(--brand-green)]/15
+                text-[var(--brand-green)] font-semibold
+                shadow-sm
+                hover:bg-[var(--brand-cream)] transition
+              "
               >
                 <span>View All</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
+
           </div>
 
-          {/* Cards */}
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {trips.map((t) => (
               <li key={t.id}>
@@ -123,8 +150,10 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+
         </div>
       </section>
+
     </main>
   );
 }

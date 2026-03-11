@@ -12,7 +12,13 @@ type Props = {
   image: string;
 };
 
-export default function TripCardSimple({ id, title, tag, rating, image }: Props) {
+export default function TripCardSimple({
+  id,
+  title,
+  tag,
+  rating,
+  image,
+}: Props) {
   return (
     <article className="group rounded-3xl overflow-hidden border border-[var(--brand-green)]/10 bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition">
       <div className="relative h-36 sm:h-40 bg-[var(--brand-cream)]">
