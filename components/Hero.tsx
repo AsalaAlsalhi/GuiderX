@@ -19,24 +19,30 @@ export default function Hero() {
   return (
     <section className="hero-fade hero-gradient-sides relative overflow-hidden">
       <div className="container relative">
-        <div className="pt-10 sm:pt-14 md:pt-24 pb-8 sm:pb-10 md:pb-16">
-          <div className="max-w-5xl mx-auto text-center">
+        <div className="pt-10 sm:pt-14 md:pt-20 pb-10 sm:pb-12 md:pb-16">
+          <div className="max-w-4xl mx-auto text-center">
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
               <span className="text-[var(--brand-green)]">Find your </span>
               <span className="text-[var(--brand-gold)]">guide!</span>
             </h1>
 
+            {/* Subtitle */}
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-[var(--brand-green)]/65 max-w-2xl mx-auto leading-7">
+              Discover trusted local guides and explore destinations around Oman
+              with ease.
+            </p>
+
             {/* Search */}
-            <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
-              {/* خففنا padding + shadow بالموبايل */}
-              <div className="search-shell border-0 p-3 sm:p-4 shadow-[0_14px_34px_rgba(0,0,0,0.08)] sm:shadow-[0_18px_45px_rgba(0,0,0,0.10)]">
-                <div className="flex flex-col md:flex-row items-stretch gap-2">
-                  {/* Input (NO BORDER) */}
+            <div className="mt-6 sm:mt-8 max-w-3xl mx-auto">
+              <div className="search-shell border border-black/5 bg-white/80 backdrop-blur-sm rounded-[24px] p-3 sm:p-4 shadow-[0_14px_34px_rgba(0,0,0,0.08)] sm:shadow-[0_18px_45px_rgba(0,0,0,0.10)]">
+                <div className="flex flex-col lg:flex-row items-stretch gap-3">
+                  {/* Input */}
                   <div
                     className="
                       flex-1 flex items-center gap-2
-                      rounded-xl bg-white px-3 h-11
+                      rounded-2xl bg-white px-4 h-12
+                      border border-black/8
                       shadow-sm
                       focus-within:ring-4
                       focus-within:ring-[var(--brand-gold)]/15
@@ -48,58 +54,83 @@ export default function Hero() {
                       onChange={(e) => setQ(e.target.value)}
                       onKeyDown={(e) => e.key === "Enter" && goSearch()}
                       type="text"
-                      className="w-full outline-none text-sm bg-transparent text-[var(--brand-green)] placeholder:text-[var(--brand-olive)]/70"
+                      placeholder="Where do you want to go?"
+                      className="w-full outline-none text-sm sm:text-base bg-transparent text-[var(--brand-green)] placeholder:text-[var(--brand-olive)]/70"
                     />
                   </div>
 
                   {/* Buttons */}
-                  <div className="flex gap-2 w-full md:w-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex gap-2 w-full lg:w-auto">
                     <button
                       onClick={goSearch}
                       className="
-                        h-11 px-5 rounded-xl
+                        h-12 px-5 rounded-2xl
                         bg-[var(--brand-gold)] text-white font-semibold
                         flex items-center justify-center gap-2
                         transition hover:brightness-105
-                        flex-1 md:flex-none
-                        text-sm sm:text-base
-                      "
-                    >
-                      <FiSearch />
-                      Let’s go
-                    </button>
-
-                    <button
-                      onClick={() => router.push("/map")}
-                      className="
-                        h-11 px-5 rounded-xl
-                        bg-[var(--brand-green)] text-white font-semibold
-                        flex items-center justify-center gap-2
-                        transition hover:brightness-105
-                        flex-1 md:flex-none
+                        shadow-[0_8px_18px_rgba(255,122,26,0.18)]
                         text-sm sm:text-base
                         whitespace-nowrap
                       "
                     >
-                      <HiOutlineMapPin className="text-lg" />
-                      Find a guide nearby
+                      <FiSearch className="text-base" />
+                      Let’s go
                     </button>
+
+                    <button
+  onClick={() => router.push("/map")}
+  className="
+    h-11 px-5 rounded-xl
+    border border-[var(--brand-gold)]/40
+    text-[var(--brand-gold)]
+    bg-white
+    font-semibold
+    flex items-center justify-center gap-2
+    transition
+    hover:bg-orange-50
+    hover:border-[var(--brand-gold)]
+    flex-1 md:flex-none
+    text-sm sm:text-base
+    whitespace-nowrap
+  "
+>
+  <HiOutlineMapPin className="text-lg text-[var(--brand-gold)]" />
+  Find a guide nearby
+</button>
                   </div>
                 </div>
               </div>
             </div>
-            {/* /Search */}
 
-            {/* Waitlist */}
-            <div className="mt-5 sm:mt-6 max-w-2xl mx-auto">
+            {/* CTA buttons */}
+            <div className="mt-4 sm:mt-5 max-w-3xl mx-auto grid grid-cols-1 gap-3">
               <button
-                onClick={() =>
-                  (window.location.href =
-                    "https://guiderx-waitlist.onrender.com/")
-                }
+                onClick={() => {
+                  window.location.href = "https://guiderx.co/";
+                }}
                 className="
-                  w-full h-11
-                  rounded-xl
+                  w-full h-12
+                  rounded-2xl
+                  font-semibold text-white
+                  bg-[#2563EB]
+                  hover:bg-[#1D4ED8]
+                  shadow-[0_10px_24px_rgba(37,99,235,0.20)]
+                  transition
+                  flex items-center justify-center gap-2
+                  text-sm sm:text-base
+                "
+              >
+                Explore BorderX
+              </button>
+
+              <button
+                onClick={() => {
+                  window.location.href =
+                    "https://guiderx-waitlist.onrender.com/";
+                }}
+                className="
+                  w-full h-12
+                  rounded-2xl
                   font-semibold text-white
                   bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
                   shadow-[0_8px_20px_rgba(255,122,26,0.22)]
@@ -114,7 +145,6 @@ export default function Hero() {
                 Join the waitlist
               </button>
             </div>
-            {/* /Waitlist */}
           </div>
         </div>
       </div>
