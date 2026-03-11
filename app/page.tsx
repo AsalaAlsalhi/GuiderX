@@ -42,24 +42,22 @@ export default function HomePage() {
 
             <div className="rounded-2xl border border-black/5 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)] text-center">
 
-              {/* Available Badge */}
-        <div className="flex justify-center mb-3">
+     <div className="flex justify-center mb-3">
   <span
     className="
       inline-flex items-center
       rounded-full
-      border border-green-600
+      border border-[#2563EB]
       bg-white
       px-4 py-1.5
       text-sm font-bold
-      text-green-600
+      text-[#2563EB]
       animate-pulse
     "
   >
     Available Now!
   </span>
 </div>
-
               {/* Text */}
               <p className="text-base sm:text-lg text-[var(--brand-green)] leading-relaxed">
                 Book your luxury & reliable stress-free border crossing
@@ -68,26 +66,26 @@ export default function HomePage() {
               </p>
 
               {/* BorderX Button */}
-              <div className="mt-6 flex justify-center">
-               <button
+              <br></br>
+            <button
   onClick={() => {
     window.location.href = "https://guiderx.co/";
   }}
   className="
     h-11 px-8
+    
     rounded-xl
     font-bold
-    text-[#2563EB]
-    border border-[#2563EB]
-    bg-white
-    hover:bg-blue-50
+    text-white
+    bg-[#2563EB]
+    hover:bg-[#1D4ED8]
+    shadow-[0_8px_20px_rgba(37,99,235,0.18)]
     transition
     text-sm
   "
 >
   BorderX
 </button>
-              </div>
 
             </div>
 
