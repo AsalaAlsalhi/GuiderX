@@ -35,78 +35,85 @@ export default function HomePage() {
     <main className="w-full">
       <Hero />
 
-      {/* BorderX Card */}
+      {/* BorderX Section */}
       <section className="bg-white">
         <div className="container pt-6 pb-4">
           <div className="max-w-xl mx-auto">
 
-            <div className="rounded-2xl border border-black/5 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)] text-center">
+            {/* Card */}
+            <div className="rounded-[28px] border border-black/5 bg-white py-10 shadow-[0_10px_30px_rgba(0,0,0,0.06)] text-center">
 
-     <div className="flex justify-center mb-3">
-  <span
-    className="
-      inline-flex items-center
-      rounded-full
-      border border-[#2563EB]
-      bg-white
-      px-4 py-1.5
-      text-sm font-bold
-      text-[#2563EB]
-      animate-pulse
-    "
-  >
-    Available Now!
-  </span>
-</div>
-              {/* Text */}
-              <p className="text-base sm:text-lg text-[var(--brand-green)] leading-relaxed">
-                Book your luxury & reliable stress-free border crossing
-                <br />
-                Door-to-door service with BorderX
-              </p>
+              <div className="px-8">
 
-              {/* BorderX Button */}
-              <br></br>
-            <button
-  onClick={() => {
-    window.location.href = "https://guiderx.co/";
-  }}
-  className="
-    h-11 px-8
-    
-    rounded-xl
-    font-bold
-    text-white
-    bg-[#2563EB]
-    hover:bg-[#1D4ED8]
-    shadow-[0_8px_20px_rgba(37,99,235,0.18)]
-    transition
-    text-sm
-  "
->
-  BorderX
-</button>
+                {/* Available Now */}
+                <div className="flex justify-center mb-4">
+                  <span
+                    className="
+                    inline-flex items-center
+                    rounded-full
+                    border border-[#2563EB]
+                    bg-white
+                    px-4 py-1.5
+                    text-sm font-bold
+                    text-[#2563EB]
+                    animate-pulse
+                  "
+                  >
+                    Available Now!
+                  </span>
+                </div>
+
+                {/* Text */}
+                <p className="text-base sm:text-lg font-semibold text-[var(--brand-green)] leading-relaxed">
+                  Book your luxury & reliable stress-free border crossing
+                  <br />
+                  Door-to-door service with BorderX
+                </p>
+
+              </div>
+
+              {/* BorderX Button (داخل الكارد وبعرض كامل) */}
+              <div className="mt-6 px-6">
+                <button
+                  onClick={() => {
+                    window.location.href = "https://guiderx.co/";
+                  }}
+                  className="
+                    w-full h-12
+                    rounded-2xl
+                    font-bold
+                    text-white
+                    bg-[#2563EB]
+                    hover:bg-[#1D4ED8]
+                    shadow-[0_8px_20px_rgba(37,99,235,0.18)]
+                    transition
+                    text-sm sm:text-base
+                  "
+                >
+                  BorderX
+                </button>
+              </div>
 
             </div>
 
             {/* Waitlist Button */}
-            <div className="mt-5">
+            <div className="mt-4">
               <button
                 onClick={() => {
                   window.location.href =
                     "https://guiderx-waitlist.onrender.com/";
                 }}
                 className="
-                w-full h-12
-                rounded-2xl
-                font-semibold text-white
-                bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
-                shadow-[0_8px_20px_rgba(255,122,26,0.22)]
-                hover:brightness-105
-                transition
-                flex items-center justify-center gap-2
-                text-sm sm:text-base
-              "
+                  w-full h-12
+                  rounded-2xl
+                  font-semibold text-white
+                  bg-gradient-to-r from-[var(--brand-gold)] to-orange-400
+                  shadow-[0_8px_20px_rgba(255,122,26,0.22)]
+                  hover:brightness-105
+                  transition
+                  flex items-center justify-center gap-2
+                  text-sm sm:text-base
+                "
               >
                 <HiUsers className="text-lg opacity-90" />
                 Join the waitlist
@@ -131,14 +138,14 @@ export default function HomePage() {
               <Link
                 href="/search"
                 className="
-                inline-flex items-center gap-2
-                px-4 h-10 rounded-full
-                bg-white
-                border border-[var(--brand-green)]/15
-                text-[var(--brand-green)] font-semibold
-                shadow-sm
-                hover:bg-[var(--brand-cream)] transition
-              "
+                  inline-flex items-center gap-2
+                  px-4 h-10 rounded-full
+                  bg-white
+                  border border-[var(--brand-green)]/15
+                  text-[var(--brand-green)] font-semibold
+                  shadow-sm
+                  hover:bg-[var(--brand-cream)] transition
+                "
               >
                 <span>View All</span>
                 <ArrowRight className="w-4 h-4" />

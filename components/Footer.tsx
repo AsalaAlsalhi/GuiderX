@@ -89,7 +89,7 @@ export default function Footer() {
           </p>
 
           <div className="flex items-center gap-2">
-            <Icon href="https://www.instagram.com/guiderx.co?igsh=MWNzYmVrZDhnbzZ6bA==">
+            <Icon href="https://www.instagram.com/guiderx.co">
               <Instagram className="w-4 h-4" />
             </Icon>
 
