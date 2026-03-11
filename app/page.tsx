@@ -50,7 +50,7 @@ export default function HomePage() {
               </div>
 
               {/* Text */}
-              <p className="text-base sm:text-lg font-bold text-[var(--brand-green)] leading-relaxed">
+              <p className="text-base sm:text-lg text-[var(--brand-green)] leading-relaxed">
                 Book your luxury & reliable stress-free border crossing
                 <br />
                 Door-to-door service with BorderX
